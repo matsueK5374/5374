@@ -10,7 +10,7 @@ Combustible Waste;Bottle Lid (Other Than Above);;B
 Combustible Waste;Bottles (Except For Food And Drink);;B
 Combustible Waste;Bowling Ball;;B
 Combustible Waste;Branch Tree (Pruned Branch);;B
-Combustible Waste;Broken Bottle;Please wrap it in paper etc and express it as caution and please dispose.;B
+Combustible Waste;Broken Bottle;Wrap the broken bottle in paper etc, please write "attention" in the garbage bag and put out it.;B
 Combustible Waste;Brush Pen;;B
 Combustible Waste;Brush Tube;Because it is difficult to wash it thoroughly please put it out in a combustible waste.;B
 Combustible Waste;Canvas shoes;;C
@@ -48,7 +48,7 @@ Combustible Waste;Flower Pot;;F
 Combustible Waste;Fluorescent Lamp;A fluorescent tube with a length of [length + 3 cm from the bottom of the garbage bag to the handle part] can be put out.;F
 Combustible Waste;Futon;;F
 Combustible Waste;Futon Cover;;F
-Combustible Waste;Glass Products;Wrap it in paper etc. please specify caution.;G
+Combustible Waste;Glass Products;Wrap it in paper etc, please write "attention" in the garbage bag and put out it.;G
 Combustible Waste;Glasses (Made Of Plastic);;G
 Combustible Waste;Glasses Case;;G
 Combustible Waste;Grass;Please remove the mud.;G
@@ -57,7 +57,7 @@ Combustible Waste;Helmet;;H
 Combustible Waste;Highlighter;;H
 Combustible Waste;Hose;Please bundle it so that it will not unravel please put it in the specified bag and put it out.;H
 Combustible Waste;Ketchup'S Tube;Because it is difficult to wash it thoroughly please take out as a combustible waste.;K
-Combustible Waste;Light Bulb;Wrap it in paper etc. please specify caution.;L
+Combustible Waste;Light Bulb;Wrap it in paper etc, please write "attention" in the garbage bag and put out it.;L
 Combustible Waste;Lime;;L
 Combustible Waste;Lunch Box (Other Than Above);;L
 Combustible Waste;Magic;;M
@@ -98,7 +98,7 @@ Combustible Waste;Toys (Other Than Metal);;T
 Combustible Waste;Tube Container;;T
 Combustible Waste;Tube Of Mayonnaise;Because it is difficult to wash it thoroughly please put it out in a combustible waste.;T
 Combustible Waste;Underwear;;U
-Combustible Waste;Vacant Bottles (Except For Food And Drink);Wrap the broken bottle in paper etc. Please specify it with caution and put out.;V
+Combustible Waste;Vacant Bottles (Except For Food And Drink);Wrap the broken bottle in paper etc, please write "attention" in the garbage bag and put out it.;V
 Combustible Waste;Vase;;V
 Combustible Waste;Video Tape;;V
 Combustible Waste;Vinyl Hose;Please bundle it so that it will not unravel please put it in the specified bag and put it out.;V
