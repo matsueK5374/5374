@@ -1,189 +1,99 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @mishima001
+ Sign out
+ Watch 0
+  Star 0  Fork 515 matsue5374/5374
+forked from codeforkanazawa-org/5374
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Tree: 8fc5871093 Find file Copy path5374/en/index.html
+8fc5871  13 days ago
+@mishima001 mishima001 Update index.html
+2 contributors @mishima001 @matsueodb
+RawBlameHistory      
+124 lines (115 sloc)  6.86 KB
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>5374(ｺﾞﾐﾅｼ).jp 安来市版</title> 
+    <title>5374.jp Matsue</title>   
+    <meta property="og:title" content="5374.jp Matsue" />
     <meta property="og:type" content="product" />
-    <!-- 仮の姿↓ -->
-    <meta property="og:url" content="https://yasugi5374.github.io/5374/" />
-    <meta property="og:image" content="https://yasugi5374.github.io/5374/img/ogp.png" />
-    <!-- 仮の姿↑ -->
+    <meta property="og:url" content="http://matsue.5374.jp/en" />
+    <meta property="og:image" content="http://matsue.5374.jp/en/img/ogp.png" />
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
-    <meta name="Keywords" content="安来市,ごみ,ゴミ,収集,回収" />
-    <meta name="description" content="5374.jpは貴方の地域で、いつ、どのゴミが回収されるのか、簡単に知る事ができます。ゴミの分別区分をタップすると捨てることが可能なゴミの一覧を表示します。" />    
+    <meta name="Keywords" content="matsue,english,waste,garbage" />
+    <meta name="description" content="This site is easy to understand when and where garbage is collected in your area.Tap on the garbage sorting indicator to display a list of garbage that can be thrown away." />    
     <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <link href="css/custom.css" rel="stylesheet" media="screen" />
+  <!-- アナリティクス ↓ --> 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108145009-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-108145009-1');
+</script>
+    
+  <!-- アナリティクス ↑-> 
+    
   </head>
+  <!-- 
   <body>
-   <!--  <div >
+   <div >
       <img src="./img/top_thumb_30.png" align="left" >
-  </div>  -->
+  </div>
+  -->
   <style id="accordion-style" type="text/css"></style>
   <div id="accordion"></div>
   <select class="form-control" id="select_group"></select>
   <select class="form-control" id="select_area"></select>
   <div class="accordion" id="accordion3">
     <div class="accordion-group-top">
+    <!-- 追加↓ -->
+        <div class="accordion-inner">
+          <h3>【About this application】</h3>
+          This application is a revision of "5374.jp" developed by "Code for Kanazawa" to Matsue city version of Shimane prefecture.<br>
+          <h3>【About the information provided】</h3>
+          Based on the household garbage collection schedule published by Matsue City and the garbage separation classification chart, it was implemented in this application.<br>
+           <h3>【Inquiry】</h3>
+          This site uses the translation function.<br>
+          For inquiries about this application and inadequacy of data.<br>
+          <a href="mailto:matsue.odb@tpj.co.jp?subject=【Contact about Techno Project Japan Co.】" style=" color: #0000FF;text-decoration: underline;">&nbsp;Techno Project Japan Co.</a><br>
+          Please check the site of Matsue City for information on pause information on collecting garbage at year-end and new year and garbage collection.<br><br>
+          </h3>
+        </div>
+    <!-- 追加↑ -->
     
   <!--説明-->
-  
   <div class="accordion" id="accordion3">
     <div class="accordion-group-top">
-      <div class="accordion-heading">
-        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_1" style=" color: #000000;text-decoration: underline;">休日の収集・振替収集について</a>
-      </div>
-      <div id="collapse3_1" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <div id="help">
-            <article id="content" class="markdown-body">
-              <p><b>
-                ◎ 12月30日から1月3日までは収集を行いません。<br><br>
-                ◎ Ａ地区　その他の紙類　(5月3日は収集せず5月31日に振替えます、1月3日は収集せず1月31日に振替えます)<br><br>
-                ◎ Ａ地区　ペットボトル・ビン類（飲食用）（1月2日は収集せず1月5日に振替えます）<br>
-              </b></p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion" id="accordion3">
-    <div class="accordion-group-top">
-      <div class="accordion-heading">
-        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_2" style=" color: #000000;text-decoration: underline;">リサイクルステーション</a>
-      </div>
-      <div id="collapse3_2" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <div id="help">
-            <article id="content" class="markdown-body">
-              <p>
-                <b>下記の物はお住いの地区のリサイクルステーションに出してください。</b><br>
-                <b>◎ </b>衣類：収集指定袋（大）程度までの大きさで中の見える袋に入れて出してください。<br>
-                &emsp;布団やタオル、靴下、帽子、下着、帯などは出せません。<br><br>
-                <b>◎ </b>蛍光管・体温計：ステーション内の専用コンテナに出してください。<br>
-                &emsp;蛍光管や電球は保護紙をつけずに中身だけ出してください。<br>
-                &emsp;体温計は液体が銀色(水銀)のもののみです。<br>
-                &emsp;電子体温計は金属の日に、アルコール（液体が赤色）体温計は埋立ごみの日に出してください。<br><br>
-                <b>◎ </b>板ガラス：適度な紙箱に入れ、ひもで結んで出してください。<br>
-                &emsp;割れたものは埋立ごみになるため、定期収集で埋立ごみの日に出してください。<br><br>
-                <b>リサイクルステーション設置場所</b><br>
-                荒島交流センター、赤江交流センター、社日交流センター、十神学習等供用施設、島田交流センター、宇賀荘交流センター、
-                飯梨交流センター、能義交流センター、大塚交流センター、吉田交流センター、安田交流センター、伯太中央交流センター、
-                母里交流センター、井尻交流センター、赤屋交流センター、広瀬社会福祉センター隣、下山佐交流センター、
-                菅原交流センター、山佐交流センター、宇波交流センター、認定こども園布部隣、旧奥田原交流センター駐車場、
-                西谷交流センター、東比田交流センター、比田交流センター<br><br>
-                <b>詳しい地図はこちら</b><br>
-              </p>
-                <iframe width="700" height="400" src="http://yasugi.od-db.jp/dataset/risaikuru/resource/fa50007b-afe2-4fec-adf8-38fc461ac143/view/fb04940c-a88e-4a4f-9fac-73d9212cb497" frameBorder="0"></iframe>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion" id="accordion3">
-    <div class="accordion-group-top">
-      <div class="accordion-heading">
-        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_3" style=" color: #000000;text-decoration: underline;">粗大ごみの戸別収集の申込方法</a>
-      </div>
-      <div id="collapse3_3" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <div id="help">
-            <article id="content" class="markdown-body">
-              <p><b>
-                <address>１　環境政策課窓口、電話（</b><a href="tel:0854233100" style=" color: #0000ff;text-decoration: underline;">0854-23-3100</a><b>）またはHPで申込む</b></address>
-                ２　粗大ごみ収集券を下記窓口にて購入</b><br>
-                &emsp;&emsp;環境政策課（安来庁舎）、広瀬地域センター（広瀬庁舎）、伯太地域センター（伯太庁舎）<br>
-                &emsp;&emsp;各地区交流センター（※十神交流センターは販売していません）<br><br>
-                <b>３　申込みから2週間以内に収集業者から収集日の連絡があります。指定された日の
-                朝8時までに自宅前などに粗大ごみを出し、品物の１つにシールを貼っておいてください。<br>
-                ※自宅前などに出せない場合は、連絡があった時に収集場所を相談してください。</b><br>
-                <b>◎ </b>収集は１世帯で年度間（4月～翌年3月）に２回までです。<br><br>
-                <b>◎ </b>収集券１枚（510円税込）で３個まで出すことができます。<br>
-                &emsp;収集券を２枚購入し、一度の申込で６個出すことができます。<br>
-                &emsp;ただし、２回分の申込みをしたこととして取扱いますので、その年度内に追加の申込みをすることはできません。<br><br>
-                <b>◎ </b>独立している物は１個扱いとなりますのでご注意ください。<br>
-                &emsp;（例）掛け布団と敷布団：２個扱い<br>
-                &emsp;&emsp;&emsp;&emsp;ステレオ本体と左右のスピーカー：３個扱い<br><br>
-                <b>◎ </b>８月、１２月、１月、３月は申込みができません。<br><br>
-                <b>◎ </b>粗大ごみに該当する物であっても、次に該当の物は収集を行いませんので市の施設へ自己搬入してください。<br>
-                &emsp;・成人男性が１人で持ち上げることができないもの（学習机、ベッドなど）<br>
-                &emsp;・長さが２ｍを超える物（物干し竿、すだれなど）<br>
-                &emsp;・ガラスなど割れ物が使われている物（ガラステーブル、テレビ台など）<br>
-                &emsp;・衛生用品（ポータブルトイレ、便器など）<br><br>
-                <b>※安来市における粗大ごみの定義は以下のとおりです。</b><br>
-                &emsp;・収集指定袋に入らない大きさのもの<br>
-                &emsp;・収集指定袋に入るが10㎏を超えるもの<br>
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion" id="accordion3">
-    <div class="accordion-group-top">
-      <div class="accordion-heading">
-        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_4" style=" color: #000000;text-decoration: underline;">市の施設への搬入方法</a>
-      </div>
-      <div id="collapse3_4" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <div id="help">
-            <article id="content" class="markdown-body">
-              <p>
-                <br>&emsp;市の施設に自己搬入する場合については安来市の公式サイトを参照ください。<br><br>
-                &emsp;<a href="http://www.city.yasugi.shimane.jp/busyo/shiminseikatsu/kankyou/gomi/hannyu.html" target="_blank" style=" color: #FF0000;text-decoration: underline;word-break: break-all;">http://www.city.yasugi.shimane.jp
-                busyo/shiminseikatsu/kankyou/gomi/hannyu.html</a>
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion" id="accordion3">
-    <div class="accordion-group-top">
-      <div class="accordion-heading">
-        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_5" style=" color: #000000;text-decoration: underline;">市で収集・処理しないもの</a>
-      </div>
-      <div id="collapse3_5" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <div id="help">
-            <article id="content" class="markdown-body">
-              <p>
-                <b>◎ 家電リサイクル法対象品</b><br>
-                （エアコン、テレビ（ブラウン管、薄型）、冷蔵庫、冷凍庫、洗濯機、衣類乾燥機）<br>
-                <address>&emsp;→詳しくは、家電リサイクル券センター（TEL:<a href="tel:0120319640" style=" color: #0000ff;text-decoration: underline;">0120-319-640</a>）へお問い合わせください</address><br>
-                <b>◎ デスクトップパソコン、ノートパソコン</b><br>
-                <address>&emsp;→詳しくはパソコン３R推進協会（TEL:<a href="tel:0352827685" style=" color: #0000ff;text-decoration: underline;">03-5282-7685</a>）へお問い合わせください</address><br>
-                <b>◎ バイク、タイヤ、バッテリー、消化器、ガスボンベ、薬品、オイル類など</b><br>
-                &emsp;→専門の業者、購入店にご相談ください<br><br>
-                <b>◎ 産業廃棄物</b><br>
-                <address>&emsp;→松江保健所（TEL:<a href="tel:0852231313" style=" color: #0000ff;text-decoration: underline;">0852-23-1313</a>）へお問い合わせください</address><br>
-                <b>◎ 石、土砂などは廃棄物ではありませんので市では引き取れません。</b><br>
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          
       <div class="accordion-heading">
         <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_0">5374.jpについて</a>
       </div>
       <div id="collapse3_0" class="accordion-body collapse">
         <div class="accordion-inner">
           <div id="help">
+          
+                <iframe width="700" height="400" src="http://yasugi.od-db.jp/dataset/risaikuru/resource/fa50007b-afe2-4fec-adf8-38fc461ac143/view/fb04940c-a88e-4a4f-9fac-73d9212cb497" frameBorder="0"></iframe>
+          
 ゴミの問題は、どの地域でも深刻になりつつあります。
 Code for Kanazawaでは、先ずは正しいゴミの捨て方に注目しました。
 目的と使い方は、とてもシンプルです。
             <h2>目的</h2>
 「いつ、どのゴミが収集されているのか？」
-例えばお引っ越しをされた場合や、新しく安来市に住むことになった時、このアプリを使えば、すぐに分かるようにデザインされています。
+例えばお引っ越しをされた場合や、新しく松江市に住むことになった時、このアプリを使えば、すぐに分かるようにデザインされています。
             <h2>使い方</h2>
             <h3>色でゴミのジャンルを表示</h3>
             <p>一番近いゴミの日とジャンルを上から順に表示しています。</p>
@@ -193,7 +103,7 @@ Code for Kanazawaでは、先ずは正しいゴミの捨て方に注目しまし
             <p>お住まいの地域を選択することで、ゴミ収集日が自動的に更新されます。</p>
             <div id="caption">
               <h4>提供されるゴミ情報について</h4>
-              <p>安来市が公開しているデータを独自に解析し、アプリに実装しました。</p>
+              <p>松江市が公開しているデータを独自に解析し、アプリに実装しました。</p>
               <h4>ライセンスについて</h4>
               <p>本アプリの著作権はCode for Kanazawaに帰属します。</p>
             </div>
@@ -208,6 +118,7 @@ CfKは市民のための組織です。行政や民間企業の影響を受け�
 公式サイト<br />
 <a href="http://www.codeforkanazawa.org/">http://www.codeforkanazawa.org/</a>
               </p>
+                <iframe width="700" height="400" src="http://yasugi.od-db.jp/dataset/risaikuru/resource/fa50007b-afe2-4fec-adf8-38fc461ac143/view/fb04940c-a88e-4a4f-9fac-73d9212cb497" frameBorder="0"></iframe>
             </div>
           </div>
         </div>
@@ -227,13 +138,5 @@ CfKは市民のための組織です。行政や民間企業の影響を受け�
   <script src="js/bookmark-bubble/example/example.min.js"></script>
   <script src="js/setting.js"></script>
   <script src="js/script.js"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-78614516-1', 'auto');
-  ga('send', 'pageview');
-  </script>
   </body>
 </html>
