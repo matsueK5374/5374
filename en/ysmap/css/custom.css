@@ -157,11 +157,12 @@ a:hover {
 }
 
 /* CSSでレスポンシブ対応 */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .iframe-wrapper {
     position: relative;
     width: 100%;
     //padding: calc(400 / 700 * 100%) 0 0;
+    padding: 0;
   }
   .iframe {
     position: absolute;
