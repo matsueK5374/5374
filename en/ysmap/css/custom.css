@@ -161,8 +161,7 @@ a:hover {
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    //padding: calc(400 / 700 * 100%) 0 0;
-    padding: 0;
+    padding: calc(500 / 600 * 100%) 0 0;
   }
   .iframe {
     position: absolute;
