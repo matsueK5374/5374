@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+<style type="text/css">
+   div.fill {width: 100%; height: 100%;}
+   body {padding: 0; margin: 0;}
+   html, body, #map {height: 100%; width: 100%;}
+</style>
+<script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyC9kDhQ95raZdgIv8sXTkHRN6LDl5zM7rw"></script>
+<title>Google Maps integration example</title>
+<link rel="stylesheet" href="http://openlayers.org/en/v3.16.0/css/ol.css" type="text/css">
+<script src="http://openlayers.org/en/v3.16.0/build/ol.js"></script>f
+<script type="text/javascript">
+// -------------------------------------------------------------------
+var map = null;        // map 変数
+var view = null;       // view 変数
+var olMapDiv = null;   // OpenLayers Map 用のweb page 上の領域
+
+var cyberJ = null;     // 地理院地図用の変数
+var kml_vector = null; // KML ファイル用変数
+var wp_vector = null;  // waypoint KML ファイル用変数 2
+
+var center_lon = 135.804055; // 表示中心の経度（デフォルトは始点の経度）
+var center_lat = 35.0515416666667; // 表示中心の緯度（デフォルトは始点の緯度）
+
+var kml_url  = "workn2/o3cjmap_data.kml";
+var kml_url2 = "workn2/o3cjmap_wpdata.kml";
+
+var initZoom = 15; // ズームの初期値
+var MinZoom  = 6;   // ズームの最小値（最も広い範囲）
+var MaxZoom  = 21;  // ズームの最大値（最も狭い範囲）
+
+var initPrecision = 8; // 座標表示の小数点以下の桁数の初期値
+var initOpacity = 0.5; // 不透明度の初期値
+var gMaxOpacity = 1.0; // 不透明度の最大値
+var gMinOpacity = 0.0; // 不透明度の最小値
+// *******************************************************************
+function init_map() {
+    var gmap = new google.maps.Map(document.getElementById('gmap'), {
+      disableDefaultUI: true,
+      keyboardShortcuts: false,
+      draggable: false,
+      disableDoubleClickZoom: false,
+      scrollwheel: false,
+      streetViewControl: false,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        position: google.maps.ControlPosition.TOP_RIGHT,
+        mapTypeIds: [
+          google.maps.MapTypeId.ROADMAP,
+          google.maps.MapTypeId.TERRAIN,
+          google.maps.MapTypeId.SATELLITE,
+          google.maps.MapTypeId.HYBRID
+        ]
+      },
+      zoomControl: false,
+      scaleControl: false
+    });
+
+// make sure the view doesn't go beyond the 22 zoom levels of Google Maps
+// 表示用の view 変数の定義
+    view = new ol.View({
+      maxZoom: MaxZoom,
+      minZoom:MinZoom
+    });
+    view.on('change:center', function() {
+      var center = ol.proj.transform(view.getCenter(), 'EPSG:3857', 'EPSG:4326');
+      gmap.setCenter(new google.maps.LatLng(center[1], center[0]));
+    });
+    view.on('change:resolution', function() {
+      gmap.setZoom(view.getZoom());
+    });
+
+    kml_vector = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: 'work/o3cjmap_data_20160611.kml',
+        format: new ol.format.KML({ showPointNames: false })
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({ color: '#319FD3', width: 1 })
+      })
+    });
+
+    wp_vector = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: 'work/o3cjmap_wpdata_20160611.kml',
+        format: new ol.format.KML({ showPointNames: false })
+      }),
+    });
+// cyberJ の opacity をいじるために，cyberJ という変数に入れている。
+
+    cyberJ = new ol.layer.Tile({
+        opacity: initOpacity,
+        source: new ol.source.XYZ({
+            attributions: [ new ol.Attribution({ html: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院</a>" }) ],
+            url: "http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",  projection: "EPSG:3857"
+        })
+    });
+
+    olMapDiv = document.getElementById('olmap');
+    map = new ol.Map({
+      layers: [cyberJ, kml_vector, wp_vector],
+      interactions: ol.interaction.defaults({
+        altShiftDragRotate: false,
+        dragPan: false,
+        rotate: false
+      }).extend([new ol.interaction.DragPan({kinetic: null})]),
+      target: olMapDiv,
+      view: view
+    });
+    view.setCenter(ol.proj.transform([center_lon, center_lat], "EPSG:4326", "EPSG:3857"));
+    view.setZoom(initZoom);
+
+    olMapDiv.parentNode.removeChild(olMapDiv);
+    gmap.controls[google.maps.ControlPosition.TOP_LEFT].push(olMapDiv);
+} // init_map()
+// *******************************************************************
+// 地理院地図 (var cyberJ) の opacity(この場合は不透明度) を変える
+function changeOpacity(opacity) {
+    var newOpacity = (parseFloat(document.getElementById('opacity_control').innerHTML) + opacity).toFixed(1); // 新しい opacity の値を求める
+    newOpacity = Math.min(gMaxOpacity, Math.max(gMinOpacity, newOpacity)); // 最大値と最小値の範囲を超えないように
+    cyberJ.setOpacity(newOpacity); // 地理院地図の opacity の変更
+    document.getElementById('opacity_control').innerHTML = newOpacity.toFixed(1); // opacity の数字の表示書き換え
+}
+function directSetOpacity(opacity) {
+    cyberJ.setOpacity(opacity);  document.getElementById('opacity_control').innerHTML = opacity.toFixed(1);
+}
+// *******************************************************************
+</script>
+</head>
+
+<body onload="init_map()">
+  <b>&nbsp;不透明度・0.2ずつ変更:
+    <a title="decrease opacity" href="javascript: changeOpacity(-0.2);">&lt;&lt;</a>
+    <span id="opacity_control">0.5</span>
+    <a title="increase opacity" href="javascript: changeOpacity(0.2);">&gt;&gt;</a></b>
+
+  <div id="map" class="map" style="width: 100%; height: 97%; position:absolute; top:25px; left:0px; font-size:100%;">
+    <div id="gmap" class="fill"></div>
+    <div id="olmap" class="fill"></div>
+  </div>
+</body>
+</html>
