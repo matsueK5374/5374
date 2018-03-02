@@ -25,4 +25,5 @@ http.get(URL, (res) => {
     window.alert('③' + e.message);
 
   console.log(e.message); //エラー時
-})})();
+});
+})();
