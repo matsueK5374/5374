@@ -1,23 +1,28 @@
 (function getJSON() {
 
-    window.alert('①◆');
+    window.alert('①');
 
+let http = require('http');
+const URL = 'http://qiita.com/kazuhikoyamashita/items/273692ccbdf8c0950a71.json';
 
-    var request = new XMLHttpRequest();
+http.get(URL, (res) => {
+  let body = '';
+  res.setEncoding('utf8');
 
-    window.alert('②◆');
+  res.on('data', (chunk) => {
+      body += chunk;
+  });
 
-    //request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
-    request.open("GET", "http://mob.tpj.co.jp/mob/api/records/41", true);
-    window.alert('③◆');
-    //request.addEventListener("load", (event) => {
+  res.on('end', (res) => {
+      res = JSON.parse(body);
 
-    request.onload = function (e) {
+    window.alert('②' + res);
 
-    window.alert('ステータス：' + request.statusText);
-    window.alert('なかみ：' + request.responseText);
+      console.log(res);
+  });
+}).on('error', (e) => {
 
-    };
-    request.send(null);
+    window.alert('③' + e.message);
 
-})();
+  console.log(e.message); //エラー時
+});
