@@ -1,10 +1,16 @@
 function getJSON() {
 
-  window.alert('ゲットジェーソン');
+    window.alert('①');
 
 
     const request = new XMLHttpRequest();
+
+    window.alert('②');
+
     request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
+
+    window.alert('③');
+
     request.addEventListener("load", (event) => {
 
     window.alert('ステータス：' + event.target.status);
