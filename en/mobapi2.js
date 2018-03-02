@@ -1,6 +1,6 @@
 function getJSON() {
 
-  window.alert('クリック');
+  window.alert('新クリック');
 
 
     const request = new XMLHttpRequest();
