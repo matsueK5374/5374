@@ -1,6 +1,6 @@
 function getJSON() {
 
-  window.alert('新クリック');
+  window.alert('ゲットジェーソン');
 
 
     const request = new XMLHttpRequest();
@@ -13,7 +13,7 @@ function getJSON() {
 
 
       //  console.log(event.target.status); // => 200
-        console.log(event.target.responseText); // => "{...}"
+      //  console.log(event.target.responseText); // => "{...}"
     });
     request.send();
 
