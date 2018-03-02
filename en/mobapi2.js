@@ -9,18 +9,14 @@ function getJSON() {
 
     //request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
     request.open("GET", "http://mob.tpj.co.jp/mob/api/records/41");
-
     window.alert('③◇');
+    //request.addEventListener("load", (event) => {
 
-    request.addEventListener("load", (event) => {
+    request.onload = function (e) {
 
-    window.alert('ステータス：' + event.target.status);
-    window.alert('なかみ：' + event.target.responseText); // => "{...}"
+    window.alert('ステータス：' + request.statusText);
+    window.alert('なかみ：' + request.responseText); // => "{...}"
 
-
-
-      //  console.log(event.target.status); // => 200
-      //  console.log(event.target.responseText); // => "{...}"
     });
     request.send();
 
