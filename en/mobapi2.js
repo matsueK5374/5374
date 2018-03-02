@@ -1,24 +1,24 @@
 function getJSON() {
 
-    window.alert('①◇');
+    window.alert('①');
 
 
     const request = new XMLHttpRequest();
 
-    window.alert('②◇');
+    window.alert('②');
 
     //request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
-    request.open("GET", "http://mob.tpj.co.jp/mob/api/records/41");
-    window.alert('③◇');
+    request.open("GET", "http://mob.tpj.co.jp/mob/api/records/41", true);
+    window.alert('③');
     //request.addEventListener("load", (event) => {
 
     request.onload = function (e) {
 
     window.alert('ステータス：' + request.statusText);
-    window.alert('なかみ：' + request.responseText); // => "{...}"
+    window.alert('なかみ：' + request.responseText);
 
     });
-    request.send();
+    request.send(null);
 
 
 
