@@ -1,15 +1,16 @@
 function getJSON() {
 
-    window.alert('①');
+    window.alert('①◇');
 
 
     const request = new XMLHttpRequest();
 
-    window.alert('②');
+    window.alert('②◇');
 
-    request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
+    //request.open("GET", `http://mob.tpj.co.jp/mob/api/records/41`);
+    request.open("GET", "http://mob.tpj.co.jp/mob/api/records/41");
 
-    window.alert('③');
+    window.alert('③◇');
 
     request.addEventListener("load", (event) => {
 
