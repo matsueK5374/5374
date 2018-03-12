@@ -27,7 +27,7 @@
 $(function() {
   // ［検索］ボタンクリックで郵便番号検索を実行
   $('#search').click(function() {
-    $.getJSON('http://mob.tpj.co.jp/mob/api/records/41/callback=?',
+    $.getJSON('http://mob.tpj.co.jp/mob/api/records/41/'
     )
     // 結果を取得したら…
     .done(function(data) {
