@@ -28,7 +28,7 @@ $(function() {
   $('#search').click(function() {
     $.getJSON('http://mob.tpj.co.jp/mob/api/search?callback=?',
       {
-        records: $('#zip').val();
+        records: $('#zip').val()
       }
     )
     // 結果を取得したら…
