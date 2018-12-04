@@ -712,6 +712,8 @@ $(function() {
           target_tag += "</ul>";
 
           var dateLabel = trash.getDateLabel();
+          var accordion_height = trash.takasa;
+          
           //あと何日かを計算する処理です。
           var leftDayText = "";
 	  if (trash.mostRecent === undefined) {
