@@ -119,7 +119,9 @@ var TrashModel = function(_lable, _cell, remarks, transferdata) {
   this.regularFlg = 1;      // 定期回収フラグ（デフォルトはオン:1）
 
   var result_text = "";
-  var today = new Date();
+  //◇ var today = new Date();
+  var today = new Date('2018/12/27');
+  
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 1) {
@@ -204,7 +206,9 @@ var TrashModel = function(_lable, _cell, remarks, transferdata) {
     // 定期回収の場合
     if (this.regularFlg == 1) {
 
-      var today = new Date();
+      //◇ var today = new Date();
+      var today = new Date('2018/12/27');
+      
 
       // 12月 +3月　を表現
       for (var i = 0; i < MaxMonth; i++) {
@@ -294,7 +298,8 @@ var TrashModel = function(_lable, _cell, remarks, transferdata) {
       return 0;
     })
     //直近の日付を更新
-    var now = new Date();
+    //◇ var now = new Date();
+    var now = new Date('2018/12/27');
 
     // ◇ 
     this.bikohyoji = "";
@@ -656,7 +661,8 @@ $(function() {
     //var ableSVG = false;  // SVG未使用の場合、descriptionの1項目目を使用
     var group = areaGroup[group_name];
     var areaModel = group[area_name];
-    var today = new Date();
+    //◇ vvar today = new Date();
+    var today = new Date('2018/12/27');
 
     //直近の一番近い日付を計算します。
     areaModel.calcMostRect();
