@@ -662,7 +662,7 @@ $(function() {
     areaModel.calcMostRect();
     //トラッシュの近い順にソートします。
     areaModel.sortTrash();
-    //var accordion_height=80;
+    //var accordion_height=100;
 
     //var accordion_height = $(window).height() / descriptions.length;
     //if(descriptions.length>4){
@@ -712,8 +712,6 @@ $(function() {
           target_tag += "</ul>";
 
           var dateLabel = trash.getDateLabel();
-          var accordion_height = trash.takasa;
-
           //あと何日かを計算する処理です。
           var leftDayText = "";
 	  if (trash.mostRecent === undefined) {
